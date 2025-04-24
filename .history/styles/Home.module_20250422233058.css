@@ -1,0 +1,236 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+.navLink {
+  color: #0070f3;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #0051b3;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 1rem 0;
+}
+
+.header {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.mainTitle {
+  display: block;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.largeTitle {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  color: #000;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease 0.2s forwards;
+  transform-origin: left;
+}
+
+.divider {
+  font-size: 2.5rem;
+  color: #666;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.3s forwards;
+}
+
+.smallTitle {
+  font-size: 2.5rem;
+  color: #666;
+  font-weight: 300;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease 0.4s forwards;
+}
+
+.smallTitle:hover {
+  color: #000;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 900px;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.5s forwards;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.serviceCard {
+  background-color: #E5F4F9;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.serviceCard:nth-child(1) { animation-delay: 0.6s; }
+.serviceCard:nth-child(2) { animation-delay: 0.7s; }
+.serviceCard:nth-child(3) { animation-delay: 0.8s; }
+.serviceCard:nth-child(4) { animation-delay: 0.9s; }
+.serviceCard:nth-child(5) { animation-delay: 1.0s; }
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.serviceContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.iconContainer {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.serviceNumber {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: transparent;
+  color: #666;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #666;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.serviceTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.2;
+}
+
+.serviceDescription {
+  color: #718096;
+  line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .titleRow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .smallTitle {
+    font-size: 2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    min-height: 150px;
+  }
+
+  .serviceTitle {
+    font-size: 1.75rem;
+  }
+} 
