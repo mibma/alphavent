@@ -1,0 +1,327 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+.navLink {
+  color: #0070f3;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #0051b3;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 1rem 0;
+}
+
+.header {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.mainTitle {
+  display: block;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  position: relative;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.largeTitle {
+  font-weight: 700;
+  color: #000;
+  transition: font-size 0.6s ease;
+  cursor: pointer;
+}
+
+.titleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 2.5rem;
+  color: #666;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+.titleButton:hover {
+  color: #000;
+}
+
+.titleExit {
+  animation: none;
+}
+
+.cardFlip {
+  animation: flipCard 0.6s ease forwards;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.divider {
+  font-size: 2.5rem;
+  color: #666;
+  font-weight: 300;
+}
+
+.smallTitle {
+  font-weight: 300;
+  color: #666;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 900px;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.5s forwards;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.serviceCard {
+  background-color: #E5F4F9;
+  /* border-radius: 12px; */
+  /* padding: 1.5rem 2rem; */
+  padding: 0rem 0rem;
+  position: relative;
+  min-height: 300px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+  transition: transform 0.6s ease;
+}
+
+.serviceCard:nth-child(1) { animation-delay: 0.6s; }
+.serviceCard:nth-child(2) { animation-delay: 0.7s; }
+.serviceCard:nth-child(3) { animation-delay: 0.8s; }
+.serviceCard:nth-child(4) { animation-delay: 0.9s; }
+.serviceCard:nth-child(5) { animation-delay: 1.0s; }
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.serviceContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  gap: 1.5rem;
+}
+
+.serviceContentFront, .serviceContentBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.serviceContentBack {
+  transform: rotateY(180deg);
+}
+
+.iconContainer {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.serviceNumber {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.serviceDescription {
+  color: #718096;
+  line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Add a class for exit animation */
+.exitToRight {
+  animation: slideOutRight 0.6s ease forwards;
+}
+
+.enterFromRight {
+  animation: slideInRight 0.6s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .titleRow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .smallTitle {
+    font-size: 2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    min-height: 150px;
+  }
+
+  .serviceTitle {
+    font-size: 1.75rem;
+  }
+}
+
+@keyframes flipCard {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+.flipCard {
+  animation: flipCard 0.6s ease forwards;
+} 
